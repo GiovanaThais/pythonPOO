@@ -1,36 +1,27 @@
-class Pessoa():
-    def __init__(self,nome,idade,comer=False,falar=False):
-        self.nome=nome
-        self.idade= idade
-        self.comendo=comendo
-        self.falar= falar
-
-    def comer(self,alimento):
-        if self.comendo:
-            print(f'{self.nome} já está comendo')
-            return
-        print(f'{self.nome} está comendo{alimento}')
-        self.comendo = True
-    def parar_comer(self):
-        if not self.comendo:
-            print(f"{self.nome} não esta comendo")
-            return
-    def falar(self, assunto):
-        if self.comendo:
-            print(f'{self.nome} não pode falar comendo')
-            return
-        if self.falando:
-            print(f'{self.nome} já está falando')
-            return
-        print(f'{self.nome} está falando sobre {assunto}')
-        self.falando =True
-    def parar_falar(self):
-        if not self.falando:
-            print(f'{self.nome} não esta falando')
-            return
-        print(f'{self.nome} está falando')
-        self.falando= False
-    def get_ano_nascimento(self):
-        print(self.ano_atual - self.idade)
-
-
+import endereco as edrc
+class pessoa(edrc.endereco):
+    def __init__(self):
+        super().__init__()
+        self.nomes=''
+        self.telefone=''
+        self.celular=''
+        self.emails=''
+        self.rg=''
+        self.cpf=''
+        self.endereco=edrc.endereco() #pessoa contem endereço# 
+    def cadastrar(self):
+        super().cadastrar_endereco()
+        self.nomes=input("Nome: ")
+        self.emails=input("Email: ")
+        self.telefone=input("telefone: ")
+        self.celular=input("Celular: ")
+        self.rg=input("Rg: ")
+        self.cpf=input("CPF: ")
+    def exibir(self):
+        super().exibir_endereco()
+        print(self.nomes)
+        print(self.emails)
+        print(self.telefone)
+        print(self.celular)
+        print(self.rg)
+        print(self.cpf)
